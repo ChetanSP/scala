@@ -1,0 +1,5 @@
+package MyPackage
+
+object MyObject {
+  
+}
