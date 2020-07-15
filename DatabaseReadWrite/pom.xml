@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>DatabaseReadWrite</groupId>
+	<artifactId>DatabaseReadWrite</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>DatabaseReadWrite</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
+			<version>3.8.1</version> <scope>test</scope> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.scalatest/scalatest-funsuite -->
+		<dependency>
+			<groupId>org.scalatest</groupId>
+			<artifactId>scalatest-funsuite_2.11</artifactId>
+			<version>3.1.0-M2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.11</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-parser-combinators -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-parser-combinators</artifactId>
+			<version>2.11.0-M4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging -->
+		<dependency>
+			<groupId>com.typesafe.scala-logging</groupId>
+			<artifactId>scala-logging_2.11</artifactId>
+			<version>3.9.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.0-801.jdbc4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
+		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+			<version>12.1.0.2</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.2.0.1</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.scalaj/scalaj-http -->
+		<dependency>
+			<groupId>org.scalaj</groupId>
+			<artifactId>scalaj-http_2.11</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.java.dev.jna/jna -->
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json4s/json4s-native -->
+		<dependency>
+			<groupId>org.json4s</groupId>
+			<artifactId>json4s-native_2.10</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.memsql</groupId>
+			<artifactId>memsql-connector_2.11</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>resources/dev</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>prod2sit</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>resources/test</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+
+</project>
