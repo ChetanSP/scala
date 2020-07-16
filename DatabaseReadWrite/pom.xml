@@ -124,7 +124,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>prod2sit</id>
+			<id>test</id>
 			<build>
 				<resources>
 					<resource>
