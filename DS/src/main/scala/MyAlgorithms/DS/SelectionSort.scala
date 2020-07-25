@@ -2,35 +2,33 @@ package main.scala.MyAlgorithms.DS
 
 object SelectionSort extends App {
   val aray = Array(2, 3, 7, 4, 1, 9, 6, 8, 10, 5)
-
-  val sortedArray = isSorted(aray)
   println("1 aray is: " + aray.mkString(","))
 
+  val sortedArray = isSorted(aray)
   println("2 aray is: " + sortedArray.mkString(","))
 
   def isSorted(inputArray: Array[Int]): Array[Int] = {
     var isSorted = false
-    var mymax = inputArray(0)
-
-    while (!isSorted) {
-      isSorted = true
-      var swapValue = 0
-      for (i <- 0 until inputArray.length - 1) {
-        swapValue = inputArray(i)
-        if (inputArray(i) > mymax) {
-          println(inputArray(i) + " > " + mymax)
-          isSorted = false
-          mymax = inputArray(i)
-
+    var myMaxValue = inputArray(0)
+    var myMaxIndex = 0
+    var swapIndex = 0
+    for (i <- 0 until inputArray.length - 1) {
+      myMaxValue = inputArray(0)
+      for (j <- 0 until (inputArray.length - 1 - i)) {
+        println(s"New max : $myMaxValue")
+        if (inputArray(j) > myMaxValue) {
+          println(inputArray(j) + " > " + myMaxValue)
+          myMaxValue = inputArray(j)
+          myMaxIndex = j
         }
-        println(s"i: $i and (inputArray.length - 2) = ${inputArray.length - 2}")
-        if (i == inputArray.length - 2) {
-          println("Calling Swapper")
-          println(s"mymax: $mymax  swapValue : $swapValue")
-          swapper(inputArray, mymax, swapValue)
-        }
+        swapIndex = (inputArray.length - 1 - i)
       }
-
+      println("Array so far is: " + inputArray.mkString(","))
+      println(s"Calling Swapper for value:  ${inputArray(myMaxIndex)} , ${inputArray(swapIndex)}")
+      //println(s"Calling Swapper for index: ${(myMaxIndex)} , ${(swapIndex)}")
+      swapper(inputArray, swapIndex, myMaxIndex)
+      println("Array so far is: " + inputArray.mkString(","))
+      println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
     }
 
     inputArray
