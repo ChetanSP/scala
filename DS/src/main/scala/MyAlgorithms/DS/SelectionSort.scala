@@ -14,7 +14,7 @@ object SelectionSort extends App {
     var swapIndex = 0
     for (i <- 0 until inputArray.length - 1) {
       myMaxValue = inputArray(0)
-      for (j <- 0 until (inputArray.length - 1 - i)) {
+      for (j <- 1 until (inputArray.length - 1 - i)) {
         println(s"New max : $myMaxValue")
         if (inputArray(j) > myMaxValue) {
           println(inputArray(j) + " > " + myMaxValue)
