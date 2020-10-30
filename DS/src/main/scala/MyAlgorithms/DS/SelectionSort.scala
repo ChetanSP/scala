@@ -2,43 +2,45 @@ package main.scala.MyAlgorithms.DS
 
 object SelectionSort extends App {
   val aray = Array(2, 3, 7, 4, 1, 9, 6, 8, 10, 5)
+  //val aray = Array(64, 25, 12, 22, 11)
+
   println("1 aray is: " + aray.mkString(","))
 
   val sortedArray = isSorted(aray)
   println("2 aray is: " + sortedArray.mkString(","))
 
-  def isSorted(inputArray: Array[Int]): Array[Int] = {
-    var isSorted = false
-    var myMaxValue = inputArray(0)
-    var myMaxIndex = 0
-    var swapIndex = 0
-    for (i <- 0 until inputArray.length - 1) {
-      myMaxValue = inputArray(0)
-      for (j <- 1 until (inputArray.length - 1 - i)) {
-        println(s"New max : $myMaxValue")
-        if (inputArray(j) > myMaxValue) {
-          println(inputArray(j) + " > " + myMaxValue)
-          myMaxValue = inputArray(j)
-          myMaxIndex = j
-        }
-        swapIndex = (inputArray.length - 1 - i)
-      }
-      println("Array so far is: " + inputArray.mkString(","))
-      println(s"Calling Swapper for value:  ${inputArray(myMaxIndex)} , ${inputArray(swapIndex)}")
-      //println(s"Calling Swapper for index: ${(myMaxIndex)} , ${(swapIndex)}")
-      swapper(inputArray, swapIndex, myMaxIndex)
-      println("Array so far is: " + inputArray.mkString(","))
-      println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
-    }
+  def isSorted(NewinputArray: Array[Int]): Array[Int] = {
 
+    var inputArray = NewinputArray
+    for (i <- 0 to inputArray.length - 1) {
+      var MyMin = inputArray(i)
+      var MyMinIndex = i
+      for (j <- i + 1 to inputArray.length - 1) {
+        if (inputArray(j) < inputArray(i)) {
+          println(s"${inputArray(j)} < ${inputArray(i)}")
+          println(s"OLD :MyMin :$MyMin and  MyMinIndex: $MyMinIndex")
+          MyMin = inputArray(j)
+          MyMinIndex = j
+          println(s"NEW :MyMin :$MyMin and  MyMinIndex: $MyMinIndex")
+        }
+        if (j == inputArray.length - 1) {
+          println(s"***************MyMinIndex: $MyMinIndex and i : $i****************")
+          println(s"###########${inputArray(MyMinIndex)} < ${inputArray(i)}###########")
+          val swappedArray = swapper(inputArray, MyMinIndex, i)
+          println(s"***************swappedArray: ${swappedArray.mkString(",")} $i****************")
+          inputArray = swappedArray
+        }
+      }
+    }
     inputArray
   }
 
-  def swapper(inputArray: Array[Int], a: Int, b: Int): Array[Int] = {
+  def swapper(inputArray: Array[Int], IndexI: Int, IndexJ: Int): Array[Int] = {
 
-    val firstElement = inputArray(a)
-    inputArray(a) = inputArray(b)
-    inputArray(b) = firstElement
+    val firstElement = inputArray(IndexI)
+    inputArray(IndexI) = inputArray(IndexJ)
+    inputArray(IndexJ) = firstElement
+    println(s"${inputArray.mkString(",")}")
 
     inputArray
   }

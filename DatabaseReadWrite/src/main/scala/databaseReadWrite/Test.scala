@@ -5,7 +5,6 @@ import databaseReadWrite.configProperties
 //val configProperties = new configProperties
 
 object Test extends App {
-
   println(s" OracleURL is : ${configProperties.OracleURL}")
   /*  println(s" OracleUsername is : ${configProperties.OracleUsername}")
   println(s" OraclePassword is : ${configProperties.OraclePassword}")

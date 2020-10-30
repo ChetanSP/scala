@@ -1,23 +1,46 @@
 package MyPackage
 
+/*class myClass(myArg: Int) {
+
+  private var myVal = myArg
+  def printMyVal() = {
+    println(s"myVal value : $myVal")
+  }
+}
+*/
 object MyObject extends App {
 
-  /*  val myList = List("abc", "def", "ghi")
+  val poly = new Triangle(2, 5)
+  println(s"Test triangle area: " + poly.area(2, 5))
 
-  println(myList.toString().toUpperCase())
+  var mul = (x: Int, y: Int) => x * y
 
-  println(myList.map(x => x.toUpperCase()))
-*/
-  var i = 9
-
-  iValue { i += 1; i }
-
-  def iValue(i: => Int) = {
-
-    println(s"Value of i : $i" + +i)
-
-  }
-
-  iValue(5)
+  println(mul(3, 4))
 
 }
+
+abstract class Polygon {
+  def area(length: Double, height: Double): Double = {
+    println("def area : nothing is happening here.")
+    return 0
+
+  }
+  def info(msg: String)
+
+}
+
+class Triangle(var length: Double, val height: Double) extends Polygon {
+
+  def info(msg: String) {
+    println("nothing is happening here.")
+  }
+}
+
+class Rectangle(var length: Double, val height: Double) extends Polygon {
+  override def area(length: Double, height: Double): Double = {
+    return (length + height)
+  }
+  def info(msg: String) { println("nothing is happening here.") }
+
+}
+
