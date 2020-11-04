@@ -1,4 +1,5 @@
-package MyAlgorithms.DS
+package MyAlgorithms
+
 import scala.util.control.Breaks._
 
 object BubbleSort extends App {

@@ -1,4 +1,4 @@
-package main.scala.MyAlgorithms.DS
+package MyAlgorithms
 
 object SelectionSort extends App {
   val aray = Array(2, 3, 7, 4, 1, 9, 6, 8, 10, 5)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DS/DS.iml" filepath="$PROJECT_DIR$/DS/DS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DatabaseReadWrite/DatabaseReadWrite.iml" filepath="$PROJECT_DIR$/DatabaseReadWrite/DatabaseReadWrite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyProject/src/MyProject.iml" filepath="$PROJECT_DIR$/MyProject/src/MyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyProject/MyProject1.iml" filepath="$PROJECT_DIR$/MyProject/MyProject1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyProject/target/target.iml" filepath="$PROJECT_DIR$/MyProject/target/target.iml" />
+    </modules>
+  </component>
+</project>
