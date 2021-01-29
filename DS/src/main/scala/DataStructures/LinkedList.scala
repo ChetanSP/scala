@@ -10,6 +10,7 @@ trait LinkedList[A] {
   def delete(index: Int): Unit
 }
 
+
 class myLinkedList[A] extends LinkedList[A] {
 
   private class Node(var data: A, var next: Node)
