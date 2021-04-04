@@ -7,7 +7,9 @@ trait LinkedList[A] {
 
   def update(index: Int, data: A): Unit
 
-  def delete(index: Int): Unit
+  def deleteNodeAtGivenPosition(index: Int): Unit
+
+  def deleteGivenData(DataToBeDeleted: A): Unit
 }
 
 
@@ -22,7 +24,7 @@ class myLinkedList[A] extends LinkedList[A] {
     var rover = head
     for (i <- 0 until index)
       rover = rover.next
-    return rover.data
+    rover.data
   }
 
   def update(index: Int, data: A): Unit = {
@@ -47,14 +49,32 @@ class myLinkedList[A] extends LinkedList[A] {
     }
   }
 
-  def delete(index: Int): Unit = {
-    require(index >= 0)
-    var rover = head
-    for (i <- 0 until index - 1)
-      rover = rover.next
-    rover.next = index + 1
-    println("Data of " )
+  def deleteNodeAtGivenPosition(position: Int): Unit = {
+
+    if (head.next != null) {
+      var temp: Node = head
+
+      // If head needs to be removed
+      if (position == 0) {
+        head = temp.next
+        return
+      }
+
+      // Find previous node of the node to be deleted
+      for (i <- 0 until (position - 1) if temp != null) {
+        temp = temp.next
+        if (temp == null || temp.next == null)
+          return
+
+        // Node temp->next is the node to be deleted
+        // Store pointer to the next of node to be deleted
+        val next: Node = temp.next.next
+        temp.next = next
+      }
+    }
   }
 
-
+  def deleteGivenData(DataToBeDeleted: A): Unit = {
+    ???
+  }
 }
