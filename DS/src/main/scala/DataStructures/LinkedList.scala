@@ -52,29 +52,33 @@ class myLinkedList[A] extends LinkedList[A] {
   def deleteNodeAtGivenPosition(position: Int): Unit = {
 
     if (head.next != null) {
-      var temp: Node = head
+      var rover: Node = head
 
       // If head needs to be removed
       if (position == 0) {
-        head = temp.next
+        head = rover.next
         return
       }
 
       // Find previous node of the node to be deleted
-      for (i <- 0 until (position - 1) if temp != null) {
-        temp = temp.next
-        if (temp == null || temp.next == null)
+      for (i <- 0 until (position - 1) if rover != null) {
+        rover = rover.next
+        if (rover == null || rover.next == null)
           return
 
-        // Node temp->next is the node to be deleted
+        // Node rover->next is the node to be deleted
         // Store pointer to the next of node to be deleted
-        val next: Node = temp.next.next
-        temp.next = next
+        val next: Node = rover.next.next
+        rover.next = next
       }
     }
   }
 
   def deleteGivenData(DataToBeDeleted: A): Unit = {
+    ???
+  }
+
+  def isCircularLinkedList(mylist :Node) :Unit ={
     ???
   }
 }
