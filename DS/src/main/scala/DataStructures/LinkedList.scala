@@ -75,10 +75,24 @@ class myLinkedList[A] extends LinkedList[A] {
   }
 
   def deleteGivenData(DataToBeDeleted: A): Unit = {
-    ???
+    var rover = head
+    var temp: Node = null
+
+    //If head has the data:
+    if (head.next == null && head.data == DataToBeDeleted) {
+      head = head.next
+    }
+
+    while (rover.next != null) {
+      if (rover.data == DataToBeDeleted) {
+        temp = rover.next
+      }
+      temp = rover
+      rover = rover.next
+    }
   }
 
-  def isCircularLinkedList(mylist :Node) :Unit ={
+  def isCircularLinkedList(mylist: Node): Unit = {
     ???
   }
 }
